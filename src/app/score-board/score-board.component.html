@@ -1,0 +1,55 @@
+<div class="app-screen">
+    <div class="score-container">
+        <div class="live-status-container">
+            <span *ngIf="scoreDetails.isLive" class="live-container">
+                <span class="circle"></span>
+                <span class="text-live">LIVE</span>     
+            </span>
+        </div>
+        <div class="score-team-detail">
+            {{scoreDetails.team1.name}} VS {{scoreDetails.team2.name}}
+        </div>
+        <div class="playing-team">
+            <div class="playing-team-name">
+                {{scoreDetails.team1.isPlaying? scoreDetails.team1.name : scoreDetails.team2.name}}
+            </div>
+            <div class="playing-team-score">
+                <span class="runs">{{scoreDetails.team1.isPlaying? scoreDetails.team1.totalScore : scoreDetails.team2.totalScore}} / {{scoreDetails.overs.currentOver}}</span>
+                <span class="overs"></span>
+            </div>
+        </div>
+        <div class="over-details">
+            <span class="curr-over">{{scoreDetails.overs.currentOver}}ov ~ </span>
+            <span class="curr-run-rate">{{scoreDetails.currentRunRate}} RR</span>
+        </div>
+        <div class="batsman">
+            <span class="batsman-name">
+                {{scoreDetails.batsman1.name}}
+            </span>
+            <span class="batsman-runs">
+                {{scoreDetails.batsman1.runsScored}}({{scoreDetails.batsman1.ballsPlayed}})
+            </span>
+            <span class="isOut"></span>
+        </div>
+        <div class="batsman">
+            <span class="batsman-name">
+                {{scoreDetails.batsman2.name}}
+            </span>
+            <span class="batsman-runs">
+                {{scoreDetails.batsman2.runsScored}}({{scoreDetails.batsman2.ballsPlayed}})
+            </span>
+            <span class="isOut"></span>
+        </div>
+        <div class="last-ball-notification">
+            <span class="over-container">{{scoreDetails.overs.currentOver}}</span>
+            <span class="noti-container">{{scoreDetails.notification}}</span>
+        </div>
+        <div class="run-per-ball" >
+            <div *ngFor="let run of scoreDetails.currentOver" class="ball"  [ngStyle]="{'background-color': getBallColor(run)}">
+                <span *ngIf="run!=='notPlayed'" class="run-container">{{ run }}</span>
+            </div>
+        </div>
+        
+
+    </div>
+</div>

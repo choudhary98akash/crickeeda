@@ -1,0 +1,9 @@
+.app-screen-container{
+    display: flex;
+    justify-content: center;
+
+}
+.content-container{
+    max-width: 350px;
+    background-color: rgb(245, 245, 245,0.8);
+}
