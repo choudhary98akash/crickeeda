@@ -1,7 +1,7 @@
 
     <div class="header">
         <div class="head">
-            <img src="../../assets/images/text.png" alt="Logo and name"   height="60px">
+            <img src="../../crickeeda/assets/images/text.png" alt="Logo and name"   height="60px">
         </div>
     </div>
     <div class="horizontal-ruler"></div>
@@ -18,14 +18,14 @@
                 <div class="card-match">
                     <div class="team">
                         <span class="team-container-left">
-                            <span><img src={{match.team1.photo}} alt="country flag" width="15px"> </span>
+                            <span><img src="/crickeeda/"+{{match.team1.photo}} alt="country flag" width="15px"> </span>
                             <span class="team-name">{{match.team1.name}}</span>
                         </span>
                         <span class="score">{{match.team1.totalScore}}-{{match.team1.wicketsFallen}} ({{match.team1.oversPlayed}})</span>
                     </div>
                     <div class="team">
                         <span class="team-container-left">
-                            <span><img src={{match.team2.photo}} alt="country flag" width="15px"> </span>
+                            <span><img src="/crickeeda/"+{{match.team2.photo}} alt="country flag" width="15px"> </span>
                             <span class="team-name">{{match.team2.name}}</span>
                         </span>
                         <span class="score">{{match.team2.totalScore}}-{{match.team2.wicketsFallen}} ({{match.team2.oversPlayed}})</span>
